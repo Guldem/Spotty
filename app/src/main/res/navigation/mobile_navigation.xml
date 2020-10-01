@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_spots">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="nl.shriekingprophets.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_spots"
+            app:destination="@id/navigation_spots" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_reservation"
+        android:name="nl.shriekingprophets.ui.reservation.ReservationFragment"
+        android:label="@string/title_reservation"
+        tools:layout="@layout/fragment_reservation">
+        <action
+            android:id="@+id/action_navigation_reservation_to_ticketFragment"
+            app:destination="@id/ticketFragment" />
+        <argument
+            android:name="reservation"
+            app:argType="nl.shriekingprophets.services.api.ApiReservation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_spots"
+        android:name="nl.shriekingprophets.ui.spots.SpotsFragment"
+        android:label="@string/title_spots"
+        tools:layout="@layout/fragment_spots">
+        <action
+            android:id="@+id/action_navigation_spots_to_navigation_reservation"
+            app:destination="@id/navigation_reservation" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketFragment"
+        android:name="nl.shriekingprophets.ui.ticket.TicketFragment"
+        android:label="TicketFragment"
+        tools:layout="@layout/fragment_ticket">
+         <argument
+            android:name="reservation"
+            app:argType="nl.shriekingprophets.services.api.ApiReservation" />
+        <action
+            android:id="@+id/action_ticketFragment_to_platformFragment"
+            app:destination="@id/platformFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/platformFragment"
+        android:name="nl.shriekingprophets.ui.platform.PlatformFragment"
+        android:label="PlatformFragment"
+        tools:layout="@layout/fragment_platform">
+        <argument
+            android:name="journey"
+            app:argType="nl.shriekingprophets.services.api.ApiJourney" />
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen_m">
+
+    <TextView
+        android:id="@+id/platform_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_m"
+        android:textStyle="bold"
+        android:text="Best available spots"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/platform_number_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/dimen_s"
+        app:layout_constraintTop_toBottomOf="@id/platform_title"
+        app:layout_constraintStart_toStartOf="@id/platform_title"
+        android:text="Platform"/>
+
+    <TextView
+        android:id="@+id/platform_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/platform_number_t"
+        app:layout_constraintStart_toStartOf="@id/platform_title"
+        android:text="16"/>
+
+    <TextView
+        android:id="@+id/platform_destination_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_s"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/platform_number"
+        app:layout_constraintStart_toStartOf="@id/platform_title"
+        android:text="Destination"/>
+
+    <TextView
+        android:id="@+id/platform_destination"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/platform_destination_t"
+        app:layout_constraintStart_toStartOf="@id/platform_title"
+        app:layout_constraintEnd_toStartOf="@id/scroll_guide"
+        android:text="Station Eindhoven Centraal"/>
+
+    <TextView
+        android:id="@+id/platform_time_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_s"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/platform_destination"
+        app:layout_constraintStart_toStartOf="@id/platform_title"
+        android:text="Leaves at"/>
+
+    <TextView
+        android:id="@+id/platform_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/platform_time_t"
+        app:layout_constraintStart_toStartOf="@id/platform_title"
+        app:layout_constraintEnd_toStartOf="@id/scroll_guide"
+        android:text="10:10"/>
+
+    <TextView
+        android:id="@+id/platform_lenght_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_s"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/platform_time"
+        app:layout_constraintStart_toStartOf="@id/platform_title"
+        android:text="Train length"/>
+
+    <TextView
+        android:id="@+id/platform_lenght"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/platform_lenght_t"
+        app:layout_constraintStart_toStartOf="@id/platform_title"
+        app:layout_constraintEnd_toStartOf="@id/scroll_guide"
+        android:text="6"/>
+
+
+    <TextView
+        android:id="@+id/platform_coffee_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_l"
+        android:text="Maybe time for some:"
+        app:layout_constraintTop_toBottomOf="@id/platform_lenght"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/scroll_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@+id/scroll_guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/train_1"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:rotation="90"
+                android:src="@drawable/ic_ns_intercity_train"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/train_2"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_s"
+                android:rotation="90"
+                android:scaleX="-1"
+                android:src="@drawable/ic_ns_intercity_train"
+                app:layout_constraintStart_toStartOf="@id/train_1"
+                app:layout_constraintTop_toBottomOf="@id/train_1" />
+
+            <ImageView
+                android:id="@+id/train_3"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:rotation="90"
+                android:src="@drawable/ic_ns_intercity_train"
+                app:layout_constraintStart_toStartOf="@id/train_1"
+                app:layout_constraintTop_toBottomOf="@id/train_2" />
+
+            <ImageView
+                android:id="@+id/train_4"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_s"
+                android:rotation="90"
+                android:scaleX="-1"
+                android:src="@drawable/ic_ns_intercity_train"
+                app:layout_constraintStart_toStartOf="@id/train_1"
+                app:layout_constraintTop_toBottomOf="@id/train_3" />
+
+            <ImageView
+                android:id="@+id/train_5"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:rotation="90"
+                android:src="@drawable/ic_ns_intercity_train"
+                app:layout_constraintStart_toStartOf="@id/train_1"
+                app:layout_constraintTop_toBottomOf="@id/train_4" />
+
+            <ImageView
+                android:id="@+id/train_6"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_s"
+                android:rotation="90"
+                android:scaleX="-1"
+                android:src="@drawable/ic_ns_intercity_train"
+                app:layout_constraintStart_toStartOf="@id/train_1"
+                app:layout_constraintTop_toBottomOf="@id/train_5" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/train_6"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <!--     train 1-->
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_green_light"
+                app:layout_constraintEnd_toStartOf="@id/train_1"
+                app:layout_constraintTop_toTopOf="@id/train_1" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_green_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_1"
+                app:layout_constraintEnd_toStartOf="@id/train_1"
+                app:layout_constraintTop_toTopOf="@id/train_1" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_orange_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_1"
+                app:layout_constraintEnd_toStartOf="@id/train_1" />
+
+            <!--     train 2-->
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_orange_light"
+                app:layout_constraintEnd_toStartOf="@id/train_2"
+                app:layout_constraintTop_toTopOf="@id/train_2" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_red_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_2"
+                app:layout_constraintEnd_toStartOf="@id/train_1"
+                app:layout_constraintTop_toTopOf="@id/train_2" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_red_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_2"
+                app:layout_constraintEnd_toStartOf="@id/train_2" />
+
+            <!--     train 3-->
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_orange_light"
+                app:layout_constraintEnd_toStartOf="@id/train_3"
+                app:layout_constraintTop_toTopOf="@id/train_3" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_orange_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_3"
+                app:layout_constraintEnd_toStartOf="@id/train_3"
+                app:layout_constraintTop_toTopOf="@id/train_3" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_red_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_3"
+                app:layout_constraintEnd_toStartOf="@id/train_3" />
+
+            <!--     train 2-->
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_orange_light"
+                app:layout_constraintEnd_toStartOf="@id/train_4"
+                app:layout_constraintTop_toTopOf="@id/train_4" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_green_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_4"
+                app:layout_constraintEnd_toStartOf="@id/train_4"
+                app:layout_constraintTop_toTopOf="@id/train_4" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_green_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_4"
+                app:layout_constraintEnd_toStartOf="@id/train_4" />
+
+            <!--     train 5-->
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_red_light"
+                app:layout_constraintEnd_toStartOf="@id/train_5"
+                app:layout_constraintTop_toTopOf="@id/train_5" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_green_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_5"
+                app:layout_constraintEnd_toStartOf="@id/train_5"
+                app:layout_constraintTop_toTopOf="@id/train_5" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_orange_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_5"
+                app:layout_constraintEnd_toStartOf="@id/train_5" />
+
+            <!--     train 6-->
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_green_light"
+                app:layout_constraintEnd_toStartOf="@id/train_6"
+                app:layout_constraintTop_toTopOf="@id/train_6" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_green_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_6"
+                app:layout_constraintEnd_toStartOf="@id/train_6"
+                app:layout_constraintTop_toTopOf="@id/train_6" />
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="20dp"
+                android:background="@android:color/holo_orange_light"
+                app:layout_constraintBottom_toBottomOf="@id/train_6"
+                app:layout_constraintEnd_toStartOf="@id/train_6" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/platform_lottie"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/platform_coffee_text"
+        app:layout_constraintVertical_bias="0.499"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="lottie/coffee.json"
+        app:lottie_loop="true" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
